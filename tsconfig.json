@@ -1,0 +1,35 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "adapters": ["src/adapters/*"],
+      "assets": ["src/assets/*"],
+      "components": ["src/components/*"],
+      "constants": ["src/constants/*"],
+      "features": ["src/features/*"],
+      "hooks": ["src/hooks/*"],
+      "routes": ["src/routes/*"],
+      "screens": ["src/screens/*"],
+      "services": ["src/features/home/services/*"],
+      "store": ["src/store/*"],
+      "theme": ["src/theme/*"],
+      "utils": ["src/utils/*"],
+      "config": ["src/config/*"]
+    },
+    "allowUmdGlobalAccess": true
+  }
+}
