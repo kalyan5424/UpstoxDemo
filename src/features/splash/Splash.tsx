@@ -11,7 +11,7 @@ const Splash = ({ navigation }) => {
    * Current timeout is set to 2 seconds.
    */
   setTimeout(() => {
-    navigation?.navigate(RouteConstants.Home.screenName)
+    navigation?.replace(RouteConstants.Home.screenName)
   }, 2000)
   return (
     <View style={styles.parentContainer}>
