@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios'
 import ListItem from 'components/listItem/ListItem'
 import { fetchStocks } from 'features/home/saga/fetchStocksSlice'
 import { useAppSelector } from 'hooks/hooks'
@@ -5,9 +6,9 @@ import { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Pressable, RefreshControl, SafeAreaView, Text, View } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { Colors } from 'theme/theme'
-import { isNetworkError } from 'utils/Utils'
 import { STATUS } from 'utils/enum'
 import Labels from 'utils/labels'
+import { isNetworkError } from 'utils/utils'
 import styles from './styles'
 
 /**
@@ -52,7 +53,7 @@ const StocksView = () => {
         {status === STATUS.ERROR && (
           <View style={styles.loaderContainer}>
             <Text style={styles.textStyle}>
-              {isNetworkError(error) ? Labels.INTERNET_ERROR : Labels.ERROR_PROCESSING}
+              {isNetworkError(error as AxiosError) ? Labels.INTERNET_ERROR : Labels.ERROR_PROCESSING}
             </Text>
             <Pressable style={styles.reloadButtonStyle} onPress={fetchAllStocks}>
               <Text style={styles.reloadTextStyle}>{Labels.RELOAD}</Text>

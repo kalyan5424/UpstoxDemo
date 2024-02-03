@@ -13,5 +13,9 @@ import {it} from '@jest/globals';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  renderer.create(<App />);
-});
+  let props = {
+    screenName: 'string',
+    screenProps: 'string',
+  }
+  renderer.create(<App {...props} />)
+})

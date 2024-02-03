@@ -1,4 +1,5 @@
 import BottomView from 'components/bottomView/BottomView'
+import ErrorBoundary from 'components/errorBoundary/ErrorBoundary'
 import Header from 'components/header/Header'
 import StocksView from 'components/stocksView/StocksView'
 import { View } from 'react-native'
@@ -11,11 +12,13 @@ import styles from './styles'
  */
 const Home = () => {
   return (
-    <View style={styles.parentContainer}>
-      <Header title={RouteConstants.Home.screenName} />
-      <StocksView />
-      <BottomView />
-    </View>
+    <ErrorBoundary>
+      <View style={styles.parentContainer}>
+        <Header title={RouteConstants.Home.screenName} />
+        <StocksView />
+        <BottomView />
+      </View>
+    </ErrorBoundary>
   )
 }
 

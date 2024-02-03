@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import ErrorBoundary from 'components/errorBoundary/ErrorBoundary'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import getRouteName, { RouteConstants } from './RouteConstants'
 import styles from './styles'
@@ -12,9 +13,11 @@ const Stack = createStackNavigator()
  */
 const ReactApp = ({ screenProps, screenName }: NavigationProps) => {
   return (
-    <GestureHandlerRootView style={styles.parent}>
-      <NavigationStack screenProps={screenProps} screenName={screenName} />
-    </GestureHandlerRootView>
+    <ErrorBoundary>
+      <GestureHandlerRootView style={styles.parent}>
+        <NavigationStack screenProps={screenProps} screenName={screenName} />
+      </GestureHandlerRootView>
+    </ErrorBoundary>
   )
 }
 

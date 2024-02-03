@@ -28,7 +28,7 @@ const BottomView = () => {
   return (
     <View style={styles.bottomViewContainer}>
       <TouchableOpacity onPress={onArrowPress} style={styles.arrowContainer}>
-        {!expanded ? <UpArrow style={styles.arrowStyle} /> : <UpArrow style={styles.downArrowStyle} />}
+        {!expanded ? <UpArrow testID='UpArrowIcon' style={styles.arrowStyle} /> : <UpArrow testID='DownArrowIcon' style={styles.downArrowStyle} />}
       </TouchableOpacity>
       {expanded && (
         <View>
