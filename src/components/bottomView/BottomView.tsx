@@ -1,22 +1,27 @@
 import { UpArrow } from 'assets/images'
 import BottomViewItem from 'components/bottomViewItem/BottomViewItem'
+import { useAppSelector } from 'hooks/hooks'
 import { useState } from 'react'
 import { TouchableOpacity, View } from 'react-native'
-import { useSelector } from 'react-redux'
-import Labels from 'utils/Labels'
-import { isEmptyObject } from 'utils/Utils'
-import { calTotalCurrentValue, calTotalInvestmentValue, todaysProfitLoss, totalProfitLoss } from 'utils/mathUtils'
+import Labels from 'utils/labels'
+import { calTodaysProfitLoss, calTotalCurrentValue, calTotalInvestmentValue, calTotalProfitLoss } from 'utils/mathUtils'
 import styles from './styles'
 
+/**
+ * BottomView component to see highlights of current portfolio
+ */
 const BottomView = () => {
-  const { data } = useSelector((state) => state?.stocks)
+  const { data } = useAppSelector((state) => state?.stocks)
   const [expanded, setExpanded] = useState(false)
 
+  /**
+   *  onArrowPress() used to expand/collapse BottomView
+   */
   const onArrowPress = () => {
     setExpanded(!expanded)
   }
 
-  if (isEmptyObject(data)) {
+  if (data?.userHolding?.length === 0) {
     return <></>
   }
 
@@ -29,13 +34,13 @@ const BottomView = () => {
         <View>
           <BottomViewItem title={Labels.CURRENT_VALUE} value={`₹ ${calTotalCurrentValue(data?.userHolding ?? [])}`} />
           <BottomViewItem title={Labels.TOTAL_INVEST} value={`₹ ${calTotalInvestmentValue(data?.userHolding ?? [])}`} />
-          <BottomViewItem title={Labels.TODAYS_PNL} value={`₹ ${todaysProfitLoss(data?.userHolding ?? [])}`} />
+          <BottomViewItem title={Labels.TODAYS_PNL} value={`₹ ${calTodaysProfitLoss(data?.userHolding ?? [])}`} />
         </View>
       )}
 
       <BottomViewItem
         title={Labels.PROFIT_LOSS}
-        value={`₹ ${totalProfitLoss(data?.userHolding ?? [])}`}
+        value={`₹ ${calTotalProfitLoss(data?.userHolding ?? [])}`}
         isLastItem={true}
       />
     </View>

@@ -1,3 +1,6 @@
+/**
+ *  This file is used to list & export all color codes used in app
+ */
 export const DARK = '#121212'
 export const LIGHT = '#FFFFFF'
 

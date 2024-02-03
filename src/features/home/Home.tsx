@@ -5,6 +5,10 @@ import { View } from 'react-native'
 import { RouteConstants } from 'routes/RouteConstants'
 import styles from './styles'
 
+/**
+ *  Home() component is the landing component the encloses Header, StocksView and BottomView components.
+ *  Home components is the mail container.
+ */
 const Home = () => {
   return (
     <View style={styles.parentContainer}>

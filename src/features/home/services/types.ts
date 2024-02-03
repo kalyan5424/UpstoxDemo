@@ -1,4 +1,4 @@
-export interface FetchStocksData {
+export interface StocksData {
   userHolding: UserHolding[]
 }
 

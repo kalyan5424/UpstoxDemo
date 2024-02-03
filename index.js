@@ -1,5 +1,5 @@
 /**
- * @format
+ * UpstoxDemo React Native App
  */
 
 import {AppRegistry} from 'react-native';

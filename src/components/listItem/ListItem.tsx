@@ -3,6 +3,9 @@ import { calProfitLoss } from 'utils/mathUtils'
 import styles from './styles'
 import { ListItemProps } from './types'
 
+/**
+ *  ListItem component used to render each row item for list of stocks
+ */
 const ListItem = ({ item, index, onPress }: ListItemProps) => {
   return (
     <TouchableOpacity onPress={onPress}>

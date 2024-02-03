@@ -4,6 +4,9 @@ import { fetchStocksResAdapter, fetchStocksRqAdapter } from '../services/transfo
 import { FetchStocksRq } from '../services/types'
 import { fetchStocks, fetchStocksFailed, fetchStocksLoading, fetchStocksSuccess } from './fetchStocksSlice'
 
+/**
+ * fetchStocksSaga() generator function to execute API request and save the API response in Redux store
+ */
 function* fetchStocksSaga(fetchStocksRq: FetchStocksRq): Generator<any, any, any> {
   yield put(fetchStocksLoading())
   try {

@@ -7,15 +7,21 @@ import { NavigationProps } from './types'
 
 const Stack = createStackNavigator()
 
-const NavigationStack = ({ screenProps, screenName }: NavigationProps) => {
+/**
+ *  ReactApp() function wraps your Navigation stack.
+ */
+const ReactApp = ({ screenProps, screenName }: NavigationProps) => {
   return (
     <GestureHandlerRootView style={styles.parent}>
-      <ReactApp screenProps={screenProps} screenName={screenName} />
+      <NavigationStack screenProps={screenProps} screenName={screenName} />
     </GestureHandlerRootView>
   )
 }
 
-const ReactApp = ({ screenProps, screenName }: any) => {
+/**
+ *  NavigationStack() function provides capability to navigate between screens.
+ */
+const NavigationStack = ({ screenProps, screenName }: any) => {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -36,4 +42,4 @@ const ReactApp = ({ screenProps, screenName }: any) => {
   )
 }
 
-export default NavigationStack
+export default ReactApp

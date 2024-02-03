@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios'
+
 export const isEmptyObject = (obj: Object) => {
   let name
   for (name in obj) {
@@ -6,4 +8,8 @@ export const isEmptyObject = (obj: Object) => {
     }
   }
   return true
+}
+
+export const isNetworkError = (err: AxiosError) => {
+  return 'ERR_NETWORK' === err?.code ? true : false
 }

@@ -1,3 +1,6 @@
+/**
+ *  This file is used to list & export all font sizes and margin/paddings used in app
+ */
 //FONT SIZES
 export const FONT_SIZE_32 = 32
 export const FONT_SIZE_28 = 28
@@ -12,6 +15,7 @@ export const FONT_SIZE_12 = 12
 export const FONT_SIZE_10 = 10
 export const FONT_SIZE_8 = 8
 
+//SPACING SIZES
 export const SPACING_2 = 2
 export const SPACING_4 = 4
 export const SPACING_8 = 8
@@ -20,3 +24,4 @@ export const SPACING_12 = 12
 export const SPACING_14 = 14
 export const SPACING_16 = 16
 export const SPACING_18 = 18
+export const SPACING_32 = 32

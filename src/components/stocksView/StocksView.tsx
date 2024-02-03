@@ -1,19 +1,28 @@
 import ListItem from 'components/listItem/ListItem'
 import { fetchStocks } from 'features/home/saga/fetchStocksSlice'
+import { useAppSelector } from 'hooks/hooks'
 import { useEffect, useState } from 'react'
-import { ActivityIndicator, FlatList, RefreshControl, SafeAreaView, Text, View } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
+import { ActivityIndicator, FlatList, Pressable, RefreshControl, SafeAreaView, Text, View } from 'react-native'
+import { useDispatch } from 'react-redux'
 import { Colors } from 'theme/theme'
-import Labels from 'utils/Labels'
+import { isNetworkError } from 'utils/Utils'
 import { STATUS } from 'utils/enum'
+import Labels from 'utils/labels'
 import styles from './styles'
 
+/**
+ *  StocksView component used to render list of all stocks of user
+ */
 const StocksView = () => {
   const dispatch = useDispatch()
   const [refreshing, setRefreshing] = useState(false)
 
-  const { data, status } = useSelector((state) => state?.stocks)
+  const { data, status, error } = useAppSelector((state) => state?.stocks)
 
+  console.log('Error', error)
+  /**
+   *  fetchAllStocks() function to retrieve all stocks held by user
+   */
   const fetchAllStocks = async () => {
     dispatch(fetchStocks())
   }
@@ -23,6 +32,10 @@ const StocksView = () => {
     setRefreshing(false)
   }, [])
 
+  /**
+   *  onItemPress() function can be used to perform any action onclick of item
+   *  Since no action is defined, hence its empty
+   */
   const onItemPress = () => {}
 
   const renderListItem = ({ item, index }) => {
@@ -39,7 +52,12 @@ const StocksView = () => {
         )}
         {status === STATUS.ERROR && (
           <View style={styles.loaderContainer}>
-            <Text style={styles.textStyle}>{Labels.ERROR_PROCESSING}</Text>
+            <Text style={styles.textStyle}>
+              {isNetworkError(error) ? Labels.INTERNET_ERROR : Labels.ERROR_PROCESSING}
+            </Text>
+            <Pressable style={styles.reloadButtonStyle} onPress={fetchAllStocks}>
+              <Text style={styles.reloadTextStyle}>{Labels.RELOAD}</Text>
+            </Pressable>
           </View>
         )}
         {status === STATUS.SUCCESS && (

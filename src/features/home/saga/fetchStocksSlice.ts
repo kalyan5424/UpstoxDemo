@@ -1,12 +1,18 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { STATUS } from 'utils/enum'
-import { FetchStocksData } from '../services/types'
+import { StocksData } from '../services/types'
 
 export type FetchStocksFailedAction = PayloadAction<{ error: any }>
-export type FetchStocksSuccessAction = PayloadAction<{ data: FetchStocksData }>
+export type FetchStocksSuccessAction = PayloadAction<{ data: StocksData }>
 
-const initialState = {
-  data: {},
+interface UpstoxStateDataType {
+  data: StocksData
+  status: string
+  error: Error | {}
+}
+
+const initialState: UpstoxStateDataType = {
+  data: { userHolding: [] },
   status: '',
   error: {},
 }
