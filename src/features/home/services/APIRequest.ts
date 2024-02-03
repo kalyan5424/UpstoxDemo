@@ -15,13 +15,9 @@ class APIRequests {
         url: fetchStocksRq.url,
       })
         .then((res) => {
-          console.log('API Res', res)
           resolve(res?.data)
         })
         .catch((err: AxiosError) => {
-          console.log('API Err', err)
-          console.log('API Msg', err.message)
-          console.log('API Code', err.code)
           reject(err)
         })
     })

@@ -19,7 +19,6 @@ const StocksView = () => {
 
   const { data, status, error } = useAppSelector((state) => state?.stocks)
 
-  console.log('Error', error)
   /**
    *  fetchAllStocks() function to retrieve all stocks held by user
    */
