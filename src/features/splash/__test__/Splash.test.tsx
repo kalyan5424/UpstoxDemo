@@ -27,3 +27,16 @@ let props = {
 it('Splash renders correctly', () => {
   renderer.create(<Splash {...props} />)
 })
+
+// describe('setTimeout to navigate from splash', () => {
+//   test('schedules a 2-second timer', () => {
+//     const callback = jest.fn()
+
+//     expect(setTimeout).toHaveBeenCalledTimes(1)
+//     // expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 2000)
+
+//     jest.runOnlyPendingTimers()
+
+//     expect(callback).toHaveBeenCalled()
+//   })
+// })
