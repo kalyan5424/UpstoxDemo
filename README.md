@@ -51,5 +51,8 @@ This is one way to run your app — you can also run it directly from within And
 
 ## Step 3: Screenshots of App
 
-![Screens](https://github.com/kalyan5424/UpstoxDemo/issues/1#issue-2116895327)
+![model](https://github.com/kalyan5424/UpstoxDemo/issues/1#issue-2116895327)
 
+![Spash Screen](https://private-user-images.githubusercontent.com/56815082/302079755-612591eb-ba56-46f4-9ee2-e2a46b38ae6e.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDcwMjU1ODksIm5iZiI6MTcwNzAyNTI4OSwicGF0aCI6Ii81NjgxNTA4Mi8zMDIwNzk3NTUtNjEyNTkxZWItYmE1Ni00NmY0LTllZTItZTJhNDZiMzhhZTZlLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjA0VDA1NDEyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE1NGRhMDcyYzg5MjIyNGNkZGFjOTRlMjc2ZDlmYzQ5YjE1NmNmZjQwNmY0MDc0ZGZhZWY1N2JkMzRhOGVhOWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.cPoXxhPrd46ifZsWMoGTMkMl-egA9LeMly7dHpF0fBA)
+
+![alt text](../../../Desktop/UpstoxDemo/Screenshot_20240204-110439_UpstoxDemo.jpg)
