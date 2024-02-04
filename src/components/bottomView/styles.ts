@@ -1,19 +1,28 @@
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 import { Colors } from 'theme/theme'
-import { FONT_SIZE_14, SPACING_10, SPACING_16, SPACING_18, SPACING_2, SPACING_4, SPACING_8 } from 'theme/typography'
+import {
+  FONT_SIZE_14,
+  SPACING_10,
+  SPACING_16,
+  SPACING_18,
+  SPACING_2,
+  SPACING_25,
+  SPACING_4,
+  SPACING_8,
+} from 'theme/typography'
 
 const styles = StyleSheet.create({
   bottomViewContainer: {
     backgroundColor: Colors.WHITE,
     borderColor: Colors.COLOR_E1E1E1,
     borderWidth: 1,
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-    shadowOpacity: 18,
-    shadowRadius: 5,
-    elevation: 5,
-    paddingHorizontal: 15,
-    paddingVertical: 5,
+    borderTopLeftRadius: SPACING_25,
+    borderTopRightRadius: SPACING_25,
+    shadowOpacity: Platform.OS == 'ios' ? 0 : SPACING_18,
+    shadowRadius: Platform.OS == 'ios' ? 0 : SPACING_4,
+    elevation: Platform.OS == 'ios' ? 0 : SPACING_4,
+    paddingHorizontal: SPACING_16,
+    paddingVertical: SPACING_4,
   },
   arrowContainer: {
     flex: 1,

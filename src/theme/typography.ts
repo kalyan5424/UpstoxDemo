@@ -24,4 +24,5 @@ export const SPACING_12 = 12
 export const SPACING_14 = 14
 export const SPACING_16 = 16
 export const SPACING_18 = 18
+export const SPACING_25 = 25
 export const SPACING_32 = 32
